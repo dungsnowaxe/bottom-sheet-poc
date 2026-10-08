@@ -1,14 +1,20 @@
 {
   "expo": {
-    "scheme": "acme",
-    "userInterfaceStyle": "automatic",
+    "scheme": "sheetlab",
+    "userInterfaceStyle": "light",
+    "ios": { "bundleIdentifier": "dev.snowaxe.bottomsheetpoc" },
+    "android": {
+      "package": "dev.snowaxe.bottomsheetpoc",
+      "softwareKeyboardLayoutMode": "resize"
+    },
     "orientation": "default",
     "web": {
       "output": "static"
     },
     "plugins": [
       "expo-router",
-      "expo-status-bar"
+      "expo-status-bar",
+      "expo-dev-client"
     ],
     "name": "bottom-sheet-poc",
     "slug": "bottom-sheet-poc"

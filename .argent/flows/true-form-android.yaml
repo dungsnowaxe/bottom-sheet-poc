@@ -1,0 +1,30 @@
+# Recorded live on Android; accidental on-screen keyboard tap removed after finish.
+# Structural smoke only. Keyboard/footer geometry requires screenshot verification.
+steps:
+  - launch: dev.snowaxe.bottomsheetpoc
+  - await: { visible: { id: library-true } }
+  - await: { idle: true }
+  - tap: { id: library-true }
+  - tap: { id: scenario-form }
+  - await: { visible: { id: compare-true-form } }
+  - await: { idle: true }
+  - tap: { id: open-sheet }
+  - await: { visible: { id: focus-field-19 } }
+  - await: { idle: true }
+  - tap: { id: focus-field-19 }
+  - await: { visible: { id: form-field-19 } }
+  - await: { idle: true }
+  - tool: keyboard
+    args: { text: Mock biography }
+  - tool: await-ui-element
+    args:
+      condition: text
+      selector: { identifier: form-field-19 }
+      expectedText: Mock biography
+  - await: { visible: { id: form-close } }
+  - tap: { id: form-close }
+  - await: { visible: { text: 'Discard edits?' } }
+  - await: { idle: true }
+  - tap: { text: DISCARD }
+  - await: { hidden: { id: form-close } }
+  - await: { idle: true }

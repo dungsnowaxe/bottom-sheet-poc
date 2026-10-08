@@ -1,0 +1,17 @@
+executionPrerequisite: TrueSheet form comparison route visible on Android, sheet dismissed, fresh mock draft on next open.
+steps:
+  - tap: { id: open-sheet }
+  - await: { visible: { id: focus-field-19 } }
+  - tap: { id: focus-field-19 }
+  - await: { visible: { id: form-field-19 } }
+  - tool: keyboard
+    args:
+      text: Proof biography
+  # Android accessibility combines the input's label and value in text waits.
+  - tool: await-ui-element
+    args:
+      condition: text
+      selector: { identifier: form-field-19 }
+      expectedText: Biography Proof biography
+      textMatch: equals
+  - await: { visible: { id: form-save } }

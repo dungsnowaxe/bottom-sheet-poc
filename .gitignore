@@ -9,6 +9,13 @@ dist/
 web-build/
 expo-env.d.ts
 
+# Generated native projects (Expo CNG)
+/ios/
+/android/
+
+# Local builds, traces and screenshots
+/artifacts/
+
 # Native
 *.orig.*
 *.jks
@@ -36,3 +43,6 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+# Argent local screen recordings
+.argent/recordings/

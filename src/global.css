@@ -1,2 +1,17 @@
 @import "tailwindcss";
 @import "uniwind";
+
+/* Design tokens. Hex values mirror `palette` in src/lab/ui.tsx (used for native
+   props like sheet backgrounds) — keep the two in sync. */
+@theme {
+  --color-canvas: #F3F5F9;   /* palette.bg */
+  --color-ink: #14213D;      /* palette.ink */
+  --color-muted: #59677E;    /* palette.muted */
+  --color-accent: #3559E0;   /* palette.accent */
+  --color-line: #DCE2ED;     /* palette.line */
+  --color-danger: #B42335;   /* palette.danger */
+  --color-sheet: #FFFFFF;    /* palette.white */
+  --color-tint: #EAF0FC;     /* secondary/chip fill */
+  --color-field: #F6F8FC;    /* input fill */
+  --color-row-alt: #F4F7FC;  /* stress list odd rows */
+}

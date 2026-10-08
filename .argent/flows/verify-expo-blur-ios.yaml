@@ -1,0 +1,18 @@
+steps:
+  - tap:
+      id: open-sheet
+  - tool: await-ui-element
+    args:
+      condition: visible
+      selector:
+        identifier: backdrop-close
+  - await: { idle: true }
+  - tap:
+      id: backdrop-close
+  - tool: await-ui-element
+    args:
+      condition: hidden
+      selector:
+        identifier: backdrop-close
+executionPrerequisite: "iOS: expo blur backdrop comparison screen open, sheet
+  closed, baseline condition"

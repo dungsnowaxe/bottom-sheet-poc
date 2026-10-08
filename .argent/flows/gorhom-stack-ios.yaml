@@ -1,0 +1,39 @@
+# Recorded live; point capture repaired to application-owned testIDs.
+steps:
+  - launch: dev.snowaxe.bottomsheetpoc
+  - await: { visible: { id: library-gorhom } }
+  - await: { idle: true }
+  - tap: { id: library-gorhom }
+  - scroll-to: { target: { id: scenario-stack }, direction: down }
+  - tap: { id: scenario-stack }
+  - await: { visible: { id: compare-gorhom-stack } }
+  - await: { idle: true }
+  - tap: { id: open-sheet }
+  - await: { visible: { id: network-ethereum } }
+  - await: { idle: true }
+  - tap: { id: network-ethereum }
+  - await: { visible: { id: wallet-metamask } }
+  - await: { idle: true }
+  - tap: { id: wallet-metamask }
+  - await: { visible: { id: connecting-back } }
+  - await: { idle: true }
+  - tap: { id: connecting-back }
+  - await: { hidden: { id: connecting-back } }
+  - tool: await-ui-element
+    args:
+      condition: text
+      selector: { identifier: wallet-metamask }
+      expectedText: '✓ MetaMask'
+  - await: { idle: true }
+  - tap: { id: wallet-back }
+  - await: { hidden: { id: wallet-back } }
+  - tool: await-ui-element
+    args:
+      condition: text
+      selector: { identifier: network-ethereum }
+      expectedText: '✓ Ethereum'
+  - await: { idle: true }
+  - await: { visible: { id: wizard-cancel-0 } }
+  - tap: { id: wizard-cancel-0 }
+  - await: { hidden: { id: wizard-cancel-0 } }
+  - await: { idle: true }

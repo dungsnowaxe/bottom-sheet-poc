@@ -3,23 +3,46 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "dependencies": {
-    "expo": "^57.0.1",
+    "@expo/ui": "57.0.22",
+    "@gorhom/bottom-sheet": "5.2.14",
+    "@legendapp/list": "3.6.0",
+    "@lodev09/react-native-true-sheet": "3.11.18",
+    "cn": "^0.4.0",
+    "expo": "57.0.27",
+    "expo-blur": "~57.0.3",
+    "expo-clipboard": "~57.0.2",
+    "expo-constants": "~57.0.21",
+    "expo-dev-client": "~57.0.19",
+    "expo-linking": "~57.0.12",
     "expo-router": "~57.0.2",
     "expo-status-bar": "~57.0.0",
+    "expo-system-ui": "~57.0.4",
     "react": "19.2.3",
-    "react-native": "0.86.0",
+    "react-native": "0.86.3",
+    "react-native-gesture-handler": "~2.32.0",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-worklets": "0.10.1",
     "tailwindcss": "~4.1.16",
     "uniwind": "~1.0.0"
   },
   "devDependencies": {
+    "@swmansion/argent": "^0.27.0",
     "@types/react": "~19.2.14",
+    "eslint": "^9",
+    "eslint-config-expo": "~57.0.2",
     "typescript": "~6.0.3"
   },
   "private": true,
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "lint": "expo lint",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test tests",
+    "build:ios:release": "expo run:ios --configuration Release",
+    "build:android:release": "expo run:android --variant release"
   }
 }

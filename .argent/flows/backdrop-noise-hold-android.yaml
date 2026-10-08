@@ -1,0 +1,60 @@
+steps:
+  - tool: await-ui-element
+    args:
+      condition: visible
+      selector:
+        identifier: open-sheet
+    delayMs: 1000
+  - echo: Open first sheet; hold for pixel settling measurement, then close.
+  - tap:
+      text: Open sheet
+  - tool: await-ui-element
+    args:
+      condition: visible
+      selector:
+        identifier: backdrop-close
+  - tool: await-ui-element
+    args:
+      condition: visible
+      selector:
+        identifier: backdrop-close
+    delayMs: 2500
+  - tap:
+      text: Close sheet
+  - tool: await-ui-element
+    args:
+      condition: hidden
+      selector:
+        identifier: backdrop-close
+  - tool: await-ui-element
+    args:
+      condition: visible
+      selector:
+        identifier: open-sheet
+    delayMs: 1500
+  - echo: Reopen sheet; hold for pixel settling measurement, then dismiss with
+      Android Back.
+  - tap:
+      text: Open sheet
+  - tool: await-ui-element
+    args:
+      condition: visible
+      selector:
+        identifier: backdrop-close
+  - tool: await-ui-element
+    args:
+      condition: visible
+      selector:
+        identifier: backdrop-close
+    delayMs: 2500
+  - tool: button
+    args:
+      button: back
+  - tool: await-ui-element
+    args:
+      condition: hidden
+      selector:
+        identifier: backdrop-close
+executionPrerequisite: Android backdrop comparison screen visible with sheet
+  closed, baseline selected. For pixel analysis, start native capture before replay;
+  for native timing analysis, start Perfetto before replay.

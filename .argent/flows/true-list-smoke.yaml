@@ -1,0 +1,19 @@
+# Recorded live on Android; polished to stable IDs and goal-seeking scroll.
+steps:
+  - launch: dev.snowaxe.bottomsheetpoc
+  - await: { visible: { id: library-true } }
+  - tap: { id: library-true }
+  - scroll-to: { target: { id: scenario-list }, direction: down }
+  - tap: { id: scenario-list }
+  - await: { visible: { text: Row workload } }
+  - tap: { id: open-sheet }
+  - await: { visible: { id: list-jump } }
+  - await:
+      text:
+        in: { id: list-count }
+        equals: 1,000 / 50,000 rows · pull to refresh
+  - tap: { id: list-jump }
+  - await:
+      text:
+        in: { id: list-count }
+        equals: 2,000 / 50,000 rows · pull to refresh

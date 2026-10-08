@@ -1,0 +1,27 @@
+# Recorded live on iPhone 17 / iOS 26.5, release build.
+# Failed pre-install waits and redundant launch removed after recording finished.
+# Tap selectors repaired using source testIDs/native-find-views; no point fallback retained.
+steps:
+  - launch: dev.snowaxe.bottomsheetpoc
+  - await:
+      visible: { id: lab-home }
+  - await: { idle: true }
+  - echo: Open Expo confirmation and verify its comparison route.
+  - tap: { id: scenario-confirmation }
+  - await:
+      visible: { id: compare-expo-confirmation }
+  - await: { idle: true }
+  - tap: { id: open-sheet }
+  - await:
+      visible: { id: confirmation-remove }
+  - await: { idle: true }
+  - echo: Submit mock removal and await its completion.
+  - tap: { id: confirmation-remove }
+  - await:
+      visible: { id: confirmation-done }
+      timeout: 6000
+  - await: { idle: true }
+  - tap: { id: confirmation-done }
+  - await:
+      hidden: { id: confirmation-done }
+  - await: { idle: true }

@@ -1,0 +1,12 @@
+# Recorded Android path; ends at the idle sheet for visual/bounds inspection.
+steps:
+  - launch: dev.snowaxe.bottomsheetpoc
+  - await: { visible: { id: lab-home } }
+  - await: { idle: true }
+  - tap: { id: scenario-confirmation }
+  - await: { visible: { id: compare-expo-confirmation } }
+  - await: { idle: true }
+  - tap: { id: open-sheet }
+  - await: { visible: { id: confirmation-remove } }
+  - await: { visible: { id: confirmation-cancel } }
+  - await: { idle: true }
